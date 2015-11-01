@@ -1,0 +1,17 @@
+create table E_GOODSMONEYAPPLY_H
+(
+  id          NUMBER(15) not null,
+  tradeno     NUMBER(15) not null,
+  type        NUMBER(2),
+  status      NUMBER(1) default 0 not null,
+  createtime  DATE not null,
+  processtime DATE
+)
+;
+comment on column E_GOODSMONEYAPPLY_H.tradeno
+  is '1 入金 2 出金 3 扣款';
+comment on column E_GOODSMONEYAPPLY_H.type
+  is '0 首款追缴 1 第二笔货款追缴 2 尾款追缴';
+comment on column E_GOODSMONEYAPPLY_H.status
+  is '0 卖方申请，1 卖方撤销，2 管理员撤销，3  系统撤销，4 已处理';
+

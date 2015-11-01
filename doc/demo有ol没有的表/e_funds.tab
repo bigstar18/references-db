@@ -1,0 +1,17 @@
+create table E_FUNDS
+(
+  firmid       VARCHAR2(32) not null,
+  margin       NUMBER(15,2),
+  goodsmoney   NUMBER(15,2),
+  transferloss NUMBER(15,2),
+  subscription NUMBER(15,2)
+)
+;
+comment on column E_FUNDS.margin
+  is '每个交易商一条资金记录，作为现货系统的交易商主表。';
+alter table E_FUNDS
+  add constraint PK_E_FUNDS primary key (FIRMID);
+alter table E_FUNDS
+  add constraint REFE_FIRM96 foreign key (FIRMID)
+  references E_FIRM (FIRMID);
+

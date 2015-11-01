@@ -1,0 +1,15 @@
+create table E_SUBSCRIPTIONFLOW
+(
+  flowid     NUMBER(10) not null,
+  oprcode    NUMBER(2) not null,
+  firmid     VARCHAR2(32) not null,
+  amount     NUMBER(15,2) not null,
+  balance    NUMBER(15,2) not null,
+  createtime DATE not null
+)
+;
+comment on column E_SUBSCRIPTIONFLOW.oprcode
+  is '1 入金 2 出金 3 扣款';
+alter table E_SUBSCRIPTIONFLOW
+  add constraint PK_E_SUBSCRIPTIONFLOW primary key (FLOWID);
+

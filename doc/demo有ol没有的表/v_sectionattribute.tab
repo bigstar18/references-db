@@ -1,0 +1,15 @@
+create table V_SECTIONATTRIBUTE
+(
+  id            NUMBER(10) not null,
+  partitionid   NUMBER(3) not null,
+  unitid        NUMBER(5) not null,
+  breedid       NUMBER(10) not null,
+  attributeid   NUMBER(10),
+  attributename VARCHAR2(128),
+  num           NUMBER(10),
+  updatetime    TIMESTAMP(6)
+)
+;
+alter table V_SECTIONATTRIBUTE
+  add constraint PK_V_SECTIONATTRIBUTE primary key (ID);
+

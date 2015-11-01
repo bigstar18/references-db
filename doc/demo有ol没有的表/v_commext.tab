@@ -1,0 +1,12 @@
+create table V_COMMEXT
+(
+  id          NUMBER(10) not null,
+  code        VARCHAR2(64) not null,
+  attributeid NUMBER(10) not null,
+  attribute   VARCHAR2(64) not null,
+  value       VARCHAR2(128) not null
+)
+;
+alter table V_COMMEXT
+  add constraint PK_V_COMMEXT primary key (ID);
+

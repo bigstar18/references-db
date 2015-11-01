@@ -1,0 +1,16 @@
+create table E_DELIVERYMARGIN
+(
+  deliverymarginid NUMBER(10) not null,
+  firmid           VARCHAR2(32),
+  categoryid       NUMBER(10),
+  marginmode       NUMBER(1) not null,
+  rate             NUMBER(15,5) not null
+)
+;
+comment on column E_DELIVERYMARGIN.marginmode
+  is '手续费算法：1 固定值 2 百分比';
+comment on column E_DELIVERYMARGIN.rate
+  is '手续费率';
+alter table E_DELIVERYMARGIN
+  add constraint PK_E_DELIVERYMARGIN primary key (DELIVERYMARGINID);
+

@@ -1,0 +1,24 @@
+create table V_SYSPARTITION
+(
+  partitionid           NUMBER(3) not null,
+  firmlimitclass        VARCHAR2(256) not null,
+  validetcommodityclass VARCHAR2(256) not null,
+  traderuleclass        VARCHAR2(256) not null,
+  bargainactionclass    VARCHAR2(256) not null,
+  kernelengineclass     VARCHAR2(256) not null,
+  countdownclass        VARCHAR2(256) not null,
+  validflag             NUMBER(3) not null,
+  description           VARCHAR2(128),
+  trademode             NUMBER(3) not null,
+  selfrate              NUMBER(10) default 0 not null,
+  isshowquotation       NUMBER(2) default 0,
+  maxshowqty            NUMBER(5) default 3 not null,
+  countmode             NUMBER(2) default 0 not null,
+  ismargincount         NUMBER(2) default 0 not null,
+  issplittarget         NUMBER(2) default 0 not null,
+  isshowprice           NUMBER(2) default 0 not null
+)
+;
+alter table V_SYSPARTITION
+  add constraint PK_V_SYSPARTITION primary key (PARTITIONID);
+

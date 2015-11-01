@@ -1,0 +1,10 @@
+create table E_ORDERPIC
+(
+  id      NUMBER(15) not null,
+  orderid NUMBER(15) not null,
+  picture BLOB not null
+)
+;
+alter table E_ORDERPIC
+  add constraint PK_E_ORDERPIC primary key (ID);
+

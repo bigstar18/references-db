@@ -1,0 +1,53 @@
+create table E_TRADE
+(
+  tradeno            NUMBER(15) not null,
+  ordertitle         VARCHAR2(128) not null,
+  breedid            NUMBER(10) not null,
+  bfirmid            VARCHAR2(32) not null,
+  sfirmid            VARCHAR2(32) not null,
+  price              NUMBER(15,2) not null,
+  quantity           NUMBER(15,2) default 0 not null,
+  unit               VARCHAR2(16) not null,
+  tradepretime       NUMBER(10) not null,
+  trademargin_b      NUMBER(15,2) not null,
+  trademargin_s      NUMBER(15,2) not null,
+  deliveryday        DATE not null,
+  deliverymargin_b   NUMBER(15,2) not null,
+  deliverymargin_s   NUMBER(15,2) not null,
+  buytradefee        NUMBER(15,2),
+  buydeliveryfee     NUMBER(15,2),
+  buypaytradefee     NUMBER(15,2),
+  buypaydeliveryfee  NUMBER(15,2),
+  selltradefee       NUMBER(15,2),
+  selldeliveryfee    NUMBER(15,2),
+  sellpaytradefee    NUMBER(15,2),
+  sellpaydeliveryfee NUMBER(15,2),
+  deliverytype       NUMBER(1),
+  warehouseid        VARCHAR2(30) default 0,
+  deliveryaddress    VARCHAR2(64),
+  tradetype          NUMBER(1) default 0 not null,
+  paytype            NUMBER(1),
+  time               DATE,
+  remark             VARCHAR2(1024),
+  status             NUMBER(2) not null,
+  orderid            NUMBER(15) not null
+)
+;
+comment on column E_TRADE.ordertitle
+  is '委托时的标题，默认为商品分类名+品名。';
+comment on column E_TRADE.tradepretime
+  is '以秒为单位';
+comment on column E_TRADE.deliverytype
+  is '1：指定仓库交收 2：指定交收地交收';
+comment on column E_TRADE.tradetype
+  is '0： 协议交收 1：自主交收 ';
+comment on column E_TRADE.paytype
+  is '0： 先款后货 1： 先货后款 2：不限制';
+comment on column E_TRADE.status
+  is '0：订单状态 1：订单阶段违约 2：订单阶段系统撤销 3：成交阶段 4：成交阶段违约
+5：货、款到位 6：支付首款  7:支付第二笔货款 8:支付尾款（结束）
+21：待违约处理(买方违约) 22：待违约处理（卖方违约）
+';
+alter table E_TRADE
+  add constraint PK_E_TRADE primary key (TRADENO);
+

@@ -1,0 +1,13 @@
+create table G_ORDERS
+(
+  order_id    INTEGER not null,
+  order_date  DATE not null,
+  customer_id INTEGER not null
+)
+;
+alter table G_ORDERS
+  add constraint G_ORDERS_PK primary key (ORDER_ID);
+alter table G_ORDERS
+  add foreign key (CUSTOMER_ID)
+  references G_CUSTOMERS (CUSTOMER_ID);
+

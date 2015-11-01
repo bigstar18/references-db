@@ -1,0 +1,23 @@
+create table BI_BUSINESSRELATIONSHIP
+(
+  stockid      VARCHAR2(16) not null,
+  buyer        VARCHAR2(32) not null,
+  seller       VARCHAR2(32) not null,
+  received     CHAR(1),
+  receiveddate DATE,
+  selltime     DATE
+)
+;
+comment on column BI_BUSINESSRELATIONSHIP.stockid
+  is '仓单id';
+comment on column BI_BUSINESSRELATIONSHIP.buyer
+  is '买家';
+comment on column BI_BUSINESSRELATIONSHIP.seller
+  is '卖家';
+comment on column BI_BUSINESSRELATIONSHIP.received
+  is '收货状态0否1是';
+comment on column BI_BUSINESSRELATIONSHIP.receiveddate
+  is '收货时间';
+comment on column BI_BUSINESSRELATIONSHIP.selltime
+  is '卖出时间';
+

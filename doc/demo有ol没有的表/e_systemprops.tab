@@ -1,0 +1,13 @@
+create table E_SYSTEMPROPS
+(
+  key          VARCHAR2(32) not null,
+  value        VARCHAR2(64) not null,
+  runtimevalue VARCHAR2(64),
+  note         VARCHAR2(128)
+)
+;
+comment on column E_SYSTEMPROPS.value
+  is '手续费、保证金等参数设置';
+alter table E_SYSTEMPROPS
+  add constraint PK_E_SYSTEMPROPS primary key (KEY);
+

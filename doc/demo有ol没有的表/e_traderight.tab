@@ -1,0 +1,33 @@
+create table E_TRADERIGHT
+(
+  traderightid    NUMBER(10) not null,
+  firmid          VARCHAR2(32) not null,
+  buyorder        NUMBER(1) default 1 not null,
+  sellorder       NUMBER(1) default 1 not null,
+  buypick         NUMBER(1) default 1 not null,
+  sellpick        NUMBER(1) default 1 not null,
+  ispickoff       NUMBER(1) default 1 not null,
+  buyorderaudit   NUMBER(1) default 1 not null,
+  sellorderaudit  NUMBER(1) default 1 not null,
+  sellpledgeaudit NUMBER(1) default 1 not null
+)
+;
+comment on column E_TRADERIGHT.buyorder
+  is '买挂牌权限：0 无权 1 有权';
+comment on column E_TRADERIGHT.sellorder
+  is '卖挂牌';
+comment on column E_TRADERIGHT.buypick
+  is '买摘牌';
+comment on column E_TRADERIGHT.sellpick
+  is '卖摘牌';
+comment on column E_TRADERIGHT.ispickoff
+  is '0 无权 1 有权';
+comment on column E_TRADERIGHT.buyorderaudit
+  is '0：需要审核；1：不需要审核';
+comment on column E_TRADERIGHT.sellorderaudit
+  is '0：需要审核；1：不需要审核';
+comment on column E_TRADERIGHT.sellpledgeaudit
+  is '0：需要审核；1：不需要审核';
+alter table E_TRADERIGHT
+  add constraint PK_E_TRADERIGHT primary key (TRADERIGHTID);
+

@@ -1,0 +1,9 @@
+create table F_B_PLATFORMMSG
+(
+  firmid     VARCHAR2(15) not null,
+  platfirmid VARCHAR2(15) not null
+)
+;
+alter table F_B_PLATFORMMSG
+  add constraint F_B_PLATFORMMSG_PRIMARY primary key (FIRMID);
+

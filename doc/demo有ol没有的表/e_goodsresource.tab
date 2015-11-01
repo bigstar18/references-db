@@ -1,0 +1,57 @@
+create table E_GOODSRESOURCE
+(
+  resourceid       NUMBER(15) not null,
+  ordertitle       VARCHAR2(128) not null,
+  breedid          NUMBER(10) not null,
+  categoryid       NUMBER(10) not null,
+  bsflag           CHAR(1) not null,
+  firmid           VARCHAR2(32) not null,
+  price            NUMBER(15,2) not null,
+  quantity         NUMBER(15,2) default 0 not null,
+  unit             VARCHAR2(16) not null,
+  tradepretime     NUMBER(10) not null,
+  trademargin_b    NUMBER(15,2) not null,
+  trademargin_s    NUMBER(15,2) not null,
+  deliverydaytype  NUMBER(1) not null,
+  deliverypretime  NUMBER(10),
+  deliveryday      DATE,
+  deliverymargin_b NUMBER(15,2) not null,
+  deliverymargin_s NUMBER(15,2) not null,
+  deliverytype     NUMBER(1),
+  warehouseid      VARCHAR2(30) default 0,
+  deliveryaddress  VARCHAR2(64),
+  traderid         VARCHAR2(40),
+  validtime        NUMBER(10) default -1 not null,
+  mintradeqty      NUMBER(15,2),
+  tradeunit        NUMBER(15,2),
+  ispickoff        VARCHAR2(1),
+  issuborder       VARCHAR2(1),
+  tradetype        NUMBER(1) default 0 not null,
+  paytype          NUMBER(1),
+  remark           VARCHAR2(1000),
+  isordered        NUMBER(1) default 0 not null
+)
+;
+comment on column E_GOODSRESOURCE.ordertitle
+  is '委托时的标题，默认为商品分类名+品名。';
+comment on column E_GOODSRESOURCE.bsflag
+  is '''B'' 买 ''S'' 卖';
+comment on column E_GOODSRESOURCE.tradepretime
+  is '以秒为单位';
+comment on column E_GOODSRESOURCE.deliverydaytype
+  is '0：指定准备天数 1：指定最后交割日';
+comment on column E_GOODSRESOURCE.deliverypretime
+  is '以秒为单位';
+comment on column E_GOODSRESOURCE.deliverytype
+  is '1：指定仓库交收 2：指定交收地交收';
+comment on column E_GOODSRESOURCE.validtime
+  is '委托有效期：-1 不限制 以秒为单位';
+comment on column E_GOODSRESOURCE.tradetype
+  is '0： 协议交收 1：自主交收 ';
+comment on column E_GOODSRESOURCE.paytype
+  is '0： 先款后货 1： 先货后款 2：不限制';
+comment on column E_GOODSRESOURCE.isordered
+  is '是否已挂牌：0 否 1 是';
+alter table E_GOODSRESOURCE
+  add constraint PK_E_GOODSRESOURCE primary key (RESOURCEID);
+

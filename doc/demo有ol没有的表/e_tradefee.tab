@@ -1,0 +1,16 @@
+create table E_TRADEFEE
+(
+  tradefeeid NUMBER(10) not null,
+  firmid     VARCHAR2(32),
+  categoryid NUMBER(10),
+  feemode    NUMBER(1) not null,
+  rate       NUMBER(15,5) not null
+)
+;
+comment on column E_TRADEFEE.feemode
+  is '手续费算法：1 固定值 2 百分比';
+comment on column E_TRADEFEE.rate
+  is '手续费率';
+alter table E_TRADEFEE
+  add constraint PK_E_TRADEFEE primary key (TRADEFEEID);
+

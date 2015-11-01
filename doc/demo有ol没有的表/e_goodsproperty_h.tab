@@ -1,0 +1,11 @@
+create table E_GOODSPROPERTY_H
+(
+  propertyname   VARCHAR2(64) not null,
+  orderid        NUMBER(15) not null,
+  propertyvalue  VARCHAR2(64),
+  propertytypeid NUMBER(15) not null
+)
+;
+alter table E_GOODSPROPERTY_H
+  add constraint PK_E_GOODSPROPERTY_H primary key (PROPERTYNAME, ORDERID);
+

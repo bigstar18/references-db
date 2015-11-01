@@ -1,0 +1,11 @@
+create table V_TEMPLETCLASSSET
+(
+  id    NUMBER(10) not null,
+  class VARCHAR2(256) not null,
+  type  NUMBER(2) not null,
+  name  VARCHAR2(256) not null
+)
+;
+alter table V_TEMPLETCLASSSET
+  add constraint PK117 primary key (ID);
+

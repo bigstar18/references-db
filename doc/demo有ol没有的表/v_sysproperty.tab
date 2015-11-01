@@ -1,0 +1,13 @@
+create table V_SYSPROPERTY
+(
+  tradepartition NUMBER(3) default 1 not null,
+  durativetime   NUMBER(8) not null,
+  spacetime      NUMBER(6) not null,
+  countdownstart VARCHAR2(128) not null,
+  countdowntime  VARCHAR2(128) not null,
+  breedid        NUMBER(10)
+)
+;
+alter table V_SYSPROPERTY
+  add constraint PK_V_SYSPROPERTY primary key (TRADEPARTITION);
+

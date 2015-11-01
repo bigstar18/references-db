@@ -1,0 +1,13 @@
+create table E_RECOMMENDSHOP
+(
+  firmid        VARCHAR2(32) not null,
+  recommendtime DATE,
+  num           NUMBER(10) default 0 not null
+)
+;
+alter table E_RECOMMENDSHOP
+  add constraint PK_E_RECOMMENDSHOP primary key (FIRMID);
+alter table E_RECOMMENDSHOP
+  add constraint REFE_FIRM122 foreign key (FIRMID)
+  references E_FIRM (FIRMID);
+

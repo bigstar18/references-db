@@ -1,0 +1,34 @@
+create table V_HISBARGAIN
+(
+  tradedate      DATE not null,
+  contractid     NUMBER(10) not null,
+  tradepartition NUMBER(3) default 1 not null,
+  section        NUMBER(5) not null,
+  submitid       NUMBER(12) not null,
+  code           VARCHAR2(64) not null,
+  commodityid    VARCHAR2(64) not null,
+  price          NUMBER(12,2) not null,
+  amount         NUMBER(16,6) not null,
+  userid         VARCHAR2(32) not null,
+  tradetime      DATE default trunc(sysdate),
+  b_bail         NUMBER(12,2) default 0 not null,
+  b_unfrozenbail NUMBER(12,2) default 0 not null,
+  s_bail         NUMBER(12,2) default 0 not null,
+  s_unfrozenbail NUMBER(12,2) default 0 not null,
+  b_poundage     NUMBER(12,2) default 0 not null,
+  s_poundage     NUMBER(12,2) default 0 not null,
+  status         NUMBER(3) default -1,
+  result         NUMBER(2) default 0,
+  b_payments     NUMBER(15,2) default 0 not null,
+  s_payments     NUMBER(15,2) default 0 not null,
+  b_referpayment NUMBER(15,2) default 0 not null,
+  s_referpayment NUMBER(15,2) default 0 not null,
+  b_dedit        NUMBER(15,2) default 0 not null,
+  s_dedit        NUMBER(15,2) default 0 not null,
+  processingtime TIMESTAMP(6),
+  remark         VARCHAR2(500)
+)
+;
+alter table V_HISBARGAIN
+  add constraint PK_V_HISBARGAIN primary key (TRADEDATE, CONTRACTID);
+

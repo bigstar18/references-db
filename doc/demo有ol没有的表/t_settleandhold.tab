@@ -1,0 +1,17 @@
+create table T_SETTLEANDHOLD
+(
+  settleholdpositionid NUMBER(15),
+  matchid              VARCHAR2(12),
+  tax                  NUMBER(15,2),
+  bs_flag              NUMBER(2)
+)
+;
+comment on column T_SETTLEANDHOLD.settleholdpositionid
+  is '交收交易客户持仓明细表id';
+comment on column T_SETTLEANDHOLD.matchid
+  is '交收配对编号';
+comment on column T_SETTLEANDHOLD.tax
+  is '税费';
+comment on column T_SETTLEANDHOLD.bs_flag
+  is '买卖标记1买，2卖';
+

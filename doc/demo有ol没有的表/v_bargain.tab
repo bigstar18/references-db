@@ -1,0 +1,21 @@
+create table V_BARGAIN
+(
+  contractid     NUMBER(10) not null,
+  tradepartition NUMBER(3) default 1 not null,
+  section        NUMBER(5) not null,
+  submitid       NUMBER(12) not null,
+  code           VARCHAR2(64) not null,
+  commodityid    VARCHAR2(64) not null,
+  price          NUMBER(12,2) not null,
+  amount         NUMBER(16,6) not null,
+  userid         VARCHAR2(32) not null,
+  tradetime      DATE default trunc(sysdate),
+  b_bail         NUMBER(12,2) default 0 not null,
+  s_bail         NUMBER(12,2) default 0 not null,
+  b_poundage     NUMBER(12,2) default 0 not null,
+  s_poundage     NUMBER(12,2) default 0 not null
+)
+;
+alter table V_BARGAIN
+  add constraint PK_V_BARGAIN primary key (CONTRACTID);
+

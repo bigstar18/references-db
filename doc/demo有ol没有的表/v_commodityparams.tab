@@ -1,0 +1,22 @@
+create table V_COMMODITYPARAMS
+(
+  tradepartition NUMBER(3) default 1 not null,
+  breedid        NUMBER(10) not null,
+  tradeunit      NUMBER(16,6) not null,
+  minamount      NUMBER(16,6) not null,
+  maxamount      NUMBER(16,6) not null,
+  stepprice      NUMBER(15,2) not null,
+  maxstepprice   NUMBER(15,2) not null,
+  marginalgr     NUMBER(2) not null,
+  b_security     NUMBER(15,4) not null,
+  s_security     NUMBER(15,4) not null,
+  feealgr        NUMBER(2) not null,
+  b_fee          NUMBER(15,5) not null,
+  s_fee          NUMBER(15,5) not null,
+  flowamountalgr NUMBER(2) default 0 not null,
+  flowamount     NUMBER(16,6) default 0.000001 not null
+)
+;
+alter table V_COMMODITYPARAMS
+  add constraint PK_V_TRADEMODULEPARAMS primary key (TRADEPARTITION, BREEDID);
+

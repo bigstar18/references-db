@@ -1,0 +1,15 @@
+create table E_ENDTRADEAPPLY
+(
+  applyid     NUMBER(10) not null,
+  tradeno     NUMBER(15) not null,
+  firmid      VARCHAR2(32) not null,
+  status      NUMBER(1) not null,
+  applytime   DATE,
+  processtime DATE
+)
+;
+comment on column E_ENDTRADEAPPLY.status
+  is '0：未处理 1：已撤销 2：已处理';
+alter table E_ENDTRADEAPPLY
+  add constraint PK_E_ENDTRADEAPPLY primary key (APPLYID);
+

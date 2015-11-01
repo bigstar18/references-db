@@ -1,0 +1,9 @@
+create table V_TRADEMODEPARAMS
+(
+  id   NUMBER(10) not null,
+  name VARCHAR2(32) not null
+)
+;
+alter table V_TRADEMODEPARAMS
+  add constraint PK_V_TRADEMODEPARAMS primary key (ID);
+

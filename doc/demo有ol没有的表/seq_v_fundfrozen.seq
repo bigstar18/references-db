@@ -1,0 +1,7 @@
+create sequence SEQ_V_FUNDFROZEN
+minvalue 1
+maxvalue 9999999999999999999999999999
+start with 101
+increment by 1
+cache 20;
+

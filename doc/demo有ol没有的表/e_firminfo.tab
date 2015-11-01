@@ -1,0 +1,13 @@
+create table E_FIRMINFO
+(
+  firmid      VARCHAR2(32) not null,
+  firmsummary VARCHAR2(1000),
+  firmxml     VARCHAR2(4000)
+)
+;
+alter table E_FIRMINFO
+  add constraint PK_E_FIRMINFO primary key (FIRMID);
+alter table E_FIRMINFO
+  add constraint FK443CE605DE351B8C foreign key (FIRMID)
+  references E_FIRM (FIRMID);
+

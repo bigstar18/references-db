@@ -1,0 +1,14 @@
+create table E_TRADE_GOODSPROPERTY
+(
+  propertyname   VARCHAR2(64) not null,
+  tradeno        NUMBER(15) not null,
+  propertyvalue  VARCHAR2(1000),
+  propertytypeid NUMBER(15) not null
+)
+;
+alter table E_TRADE_GOODSPROPERTY
+  add constraint PK_E_TRADE_GOODSPROPERTY primary key (PROPERTYNAME, TRADENO);
+alter table E_TRADE_GOODSPROPERTY
+  add constraint REFE_TRADE149 foreign key (TRADENO)
+  references E_TRADE (TRADENO);
+

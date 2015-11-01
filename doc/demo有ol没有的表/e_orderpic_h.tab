@@ -1,0 +1,8 @@
+create table E_ORDERPIC_H
+(
+  id      NUMBER(15) not null,
+  orderid NUMBER(15) not null,
+  picture BLOB not null
+)
+;
+

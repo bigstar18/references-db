@@ -1,0 +1,10 @@
+create table E_GOODSRESOURCEPIC
+(
+  id         NUMBER(15) not null,
+  resourceid NUMBER(15) not null,
+  picture    BLOB not null
+)
+;
+alter table E_GOODSRESOURCEPIC
+  add constraint PK_E_GOODSRESOURCEPIC primary key (ID);
+

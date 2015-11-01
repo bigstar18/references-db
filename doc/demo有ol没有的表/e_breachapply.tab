@@ -1,0 +1,16 @@
+create table E_BREACHAPPLY
+(
+  breachapplyid NUMBER(10) not null,
+  tradeno       NUMBER(15) not null,
+  firmid        VARCHAR2(32) not null,
+  applytime     DATE,
+  delaytime     NUMBER(10) default 0,
+  processtime   DATE,
+  status        NUMBER(1) default 0 not null
+)
+;
+comment on column E_BREACHAPPLY.status
+  is '0：未处理 1：已撤销 2：违约方满足条件撤销 3：违约处理';
+alter table E_BREACHAPPLY
+  add constraint PK_E_BREACHAPPLY primary key (BREACHAPPLYID);
+

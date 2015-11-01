@@ -1,0 +1,14 @@
+create table BI_LOGISTICS
+(
+  stockid        VARCHAR2(16) not null,
+  logisticsorder VARCHAR2(16),
+  company        VARCHAR2(32)
+)
+;
+comment on column BI_LOGISTICS.stockid
+  is '仓单id';
+comment on column BI_LOGISTICS.logisticsorder
+  is '物流订单';
+comment on column BI_LOGISTICS.company
+  is '物流公司';
+

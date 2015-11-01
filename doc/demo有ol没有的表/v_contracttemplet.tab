@@ -1,0 +1,11 @@
+create table V_CONTRACTTEMPLET
+(
+  id      NUMBER(5) not null,
+  breedid NUMBER(10) not null,
+  name    VARCHAR2(128),
+  templet CLOB not null
+)
+;
+alter table V_CONTRACTTEMPLET
+  add constraint PK_V_CONTRACTTEMPLET primary key (ID);
+

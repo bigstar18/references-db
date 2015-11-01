@@ -1,0 +1,32 @@
+create table BI_INVOICEINFORM
+(
+  stockid       VARCHAR2(16) not null,
+  invoicetype   CHAR(1),
+  companyname   VARCHAR2(100),
+  address       VARCHAR2(200),
+  dutyparagraph VARCHAR2(32),
+  bank          VARCHAR2(32),
+  bankaccount   VARCHAR2(32),
+  name          VARCHAR2(32),
+  phone         VARCHAR2(16)
+)
+;
+comment on column BI_INVOICEINFORM.stockid
+  is '仓单id';
+comment on column BI_INVOICEINFORM.invoicetype
+  is '发票类型,0/1个人（公司）';
+comment on column BI_INVOICEINFORM.companyname
+  is '公司名称/单位名称';
+comment on column BI_INVOICEINFORM.address
+  is '地址';
+comment on column BI_INVOICEINFORM.dutyparagraph
+  is '税号';
+comment on column BI_INVOICEINFORM.bank
+  is '开户银行';
+comment on column BI_INVOICEINFORM.bankaccount
+  is '开户账号';
+comment on column BI_INVOICEINFORM.name
+  is '收票人姓名';
+comment on column BI_INVOICEINFORM.phone
+  is '电话';
+

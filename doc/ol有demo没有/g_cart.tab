@@ -1,0 +1,12 @@
+create table G_CART
+(
+  customer_id   INTEGER not null,
+  cart_sequence INTEGER not null,
+  book_id       INTEGER not null,
+  quantity      INTEGER not null,
+  date_added    DATE not null
+)
+;
+alter table G_CART
+  add constraint G_CART_PK primary key (CUSTOMER_ID, CART_SEQUENCE);
+

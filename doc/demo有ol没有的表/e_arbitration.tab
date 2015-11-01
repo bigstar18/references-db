@@ -1,0 +1,28 @@
+create table E_ARBITRATION
+(
+  arbitrationid NUMBER(10) not null,
+  tradeno       NUMBER(15) not null,
+  type          NUMBER(1) not null,
+  apply         VARCHAR2(4000),
+  applytime     DATE,
+  applicant     VARCHAR2(16),
+  recipient     VARCHAR2(16),
+  result        NUMBER(1) default 0 not null,
+  processnote   VARCHAR2(1000),
+  processtime   DATE,
+  processuser   VARCHAR2(32)
+)
+;
+comment on column E_ARBITRATION.type
+  is '1 退货 2 退款 3 投诉';
+comment on column E_ARBITRATION.result
+  is '0 未处理 1 已处理';
+comment on column E_ARBITRATION.processnote
+  is '处理说明';
+comment on column E_ARBITRATION.processtime
+  is '处理时间';
+comment on column E_ARBITRATION.processuser
+  is '管理员Id';
+alter table E_ARBITRATION
+  add constraint PK_E_ARBITRATION primary key (ARBITRATIONID);
+

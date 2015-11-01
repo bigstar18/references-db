@@ -1,0 +1,12 @@
+create table V_SYSLOG
+(
+  id         NUMBER(15) not null,
+  userid     VARCHAR2(16) not null,
+  action     NUMBER(2),
+  createtime DATE,
+  note       VARCHAR2(2000)
+)
+;
+alter table V_SYSLOG
+  add constraint PK_V_SYSLOG primary key (ID);
+

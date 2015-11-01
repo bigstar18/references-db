@@ -1,0 +1,42 @@
+[gaint@moni /]$ sudo ps -ef|grep java
+demo      1359     1  0 Aug13 ?        03:11:23 /usr/java/jdk1.6.0_13/bin/java -Djava.util.logging.config.file=/users/demo/tomcat6_member/conf/logging.properties -Xms1024m -Xmx4098m -XX:PermSize=128m -XX:MaxPermSize=256m -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.endorsed.dirs=/users/demo/tomcat6_member/endorsed -classpath /users/demo/tomcat6_member/bin/bootstrap.jar -Dcatalina.base=/users/demo/tomcat6_member -Dcatalina.home=/users/demo/tomcat6_member -Djava.io.tmpdir=/users/demo/tomcat6_member/temp org.apache.catalina.startup.Bootstrap start
+
+demo     27079     1  2 Jul27 ?        1-11:43:03 java -Xms1024m -Xmx5120m -XX:PermSize=128m -XX:MaxPermSize=256m -classpath :./bin:./lib/commons-collections.jar:./lib/ActiveUser.jar:./lib/commons-logging-1.1.jar:./lib/ojdbc6.jar:./lib/commons-lang.jar:./lib/commons-dbcp-1.4.jar:./lib/log4j-1.2.13.jar:./lib/commons-pool-1.6.jar:./lib/fanbase.jar:./lib/spring-2.0.jar:./lib/ReceiveQuotation.jar:./lib/quartz-1.5.2.jar:./lib/tradecore.jar -Djava.security.policy=ServerShell.policy gnnt.MEBS.timebargain.server.ServerShell timebargain
+
+demo     27727     1 15 Jul27 ?        9-01:26:33 /usr/java/jdk1.6.0_13/bin/java -Djava.util.logging.config.file=/users/demo/tomcat6_tradeweb/conf/logging.properties -Xms1024m -Xmx5120m -XX:PermSize=128m -XX:MaxPermSize=256m -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.endorsed.dirs=/users/demo/tomcat6_tradeweb/endorsed -classpath /users/demo/tomcat6_tradeweb/bin/bootstrap.jar -Dcatalina.base=/users/demo/tomcat6_tradeweb -Dcatalina.home=/users/demo/tomcat6_tradeweb -Djava.io.tmpdir=/users/demo/tomcat6_tradeweb/temp org.apache.catalina.startup.Bootstrap start
+
+demo     29546     1  0 Jul27 ?        02:57:19 /usr/java/jdk1.6.0_13/bin/java -Djava.util.logging.config.file=/users/demo/tomcat6_specialmember/conf/logging.properties -Xms1024m -Xmx4098m -XX:PermSize=128m -XX:MaxPermSize=256m -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.endorsed.dirs=/users/demo/tomcat6_specialmember/endorsed -classpath /users/demo/tomcat6_specialmember/bin/bootstrap.jar -Dcatalina.base=/users/demo/tomcat6_specialmember -Dcatalina.home=/users/demo/tomcat6_specialmember -Djava.io.tmpdir=/users/demo/tomcat6_specialmember/temp org.apache.catalina.startup.Bootstrap start
+
+demo     30004     1  0 Jul27 ?        02:00:03 /usr/java/jdk1.6.0_13/bin/java -Djava.util.logging.config.file=/users/demo/tomcat6_broker/conf/logging.properties -Xms1024m -Xmx3072m -XX:PermSize=128m -XX:MaxPermSize=256m -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.endorsed.dirs=/users/demo/tomcat6_broker/endorsed -classpath /users/demo/tomcat6_broker/bin/bootstrap.jar -Dcatalina.base=/users/demo/tomcat6_broker -Dcatalina.home=/users/demo/tomcat6_broker -Djava.io.tmpdir=/users/demo/tomcat6_broker/temp org.apache.catalina.startup.Bootstrap start
+
+demo     43150     1  0 Jul05 ?        08:08:34 /usr/java/jdk1.6.0_13/bin/java -classpath :./lib:./lib/transformHQServer.jar:./lib/transformHQClient.jar:./lib/blpapi3.jar:./lib/commons-collections.jar:./lib/commons-logging-1.1.jar:./lib/log4j-1.2.13.jar:./lib/fanbase.jar:./lib/spring-2.0.jar:./lib/quartz-1.5.2.jar gnnt.MEBS.transformhq.server.TransStart transformhq
+
+
+通过ps及top命令查看进程信息时，只能查到相对路径，查不到的进程的详细信息，如绝对路径等。这时，我们需要通过以下的方法来查看进程的详细信息：
+ll /proc/PID
+/users/demo/tradecore
+/users/demo/transforidc
+
+
+tar -zcf /tmp/tmp/bin.tgz bin
+tar -zvcf /tmp/tmp/tomcat6.all.tgz --exclude=logs --exclude=temp --exclude=work --exclude=webapps/*.tar --exclude=webapps/*.tgz --exclude=*.tgz  tomcat6_*
+tar zcfv /tmp/tmp/member_test.tgz member_test
+tar -zvcf /tmp/tmp/standalone.all.tgz --exclude=logs transforidc tradecore
+
+
+
+tar -zvcf /tmp/tmp/standalone.all.tgz --exclude=logs transforidc transformhq adapter_gjs_demo
+tar -zvcf /tmp/tmp/tomcat6.all.tgz --exclude=logs --exclude=temp --exclude=work --exclude=webapps/*.tar --exclude=webapps/*.tgz --exclude=*.tgz  tomcat6_* proc_tc proc_tc_cmb proc_tc_cmb
+
+
+demo@backup:~ $ ps -ef|grep java
+
+demo      1334     1  0 Sep18 ?        00:52:39 /usr/java/jdk1.6.0_13/bin/java -classpath :./lib:./lib/transformHQServer.jar:./lib/transformHQClient.jar:./lib/blpapi3.jar:./lib/commons-collections.jar:./lib/commons-logging-1.1.jar:./lib/log4j-1.2.13.jar:./lib/fanbase.jar:./lib/spring-2.0.jar:./lib/quartz-1.5.2.jar gnnt.MEBS.transformhq.server.TransStart transformhq
+
+demo      2223     1  1 Sep02 ?        06:17:58 /usr/java/jdk1.6.0_13/bin/java -Djava.util.logging.config.file=/users/demo/tomcat6_exchange/conf/logging.properties -Xms1024m -Xmx5120m -XX:PermSize=128m -XX:MaxPermSize=256m -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.endorsed.dirs=/users/demo/tomcat6_exchange/endorsed -classpath /users/demo/tomcat6_exchange/bin/bootstrap.jar -Dcatalina.base=/users/demo/tomcat6_exchange -Dcatalina.home=/users/demo/tomcat6_exchange -Djava.io.tmpdir=/users/demo/tomcat6_exchange/temp org.apache.catalina.startup.Bootstrap start
+
+demo      6390     1  2 Jul27 ?        1-06:31:21 /usr/java/jdk1.6.0_13/bin/java -Djava.util.logging.config.file=/users/demo/tomcat6_hqweb/conf/logging.properties -Xms256m -Xmx512m -XX:PermSize=128m -XX:MaxPermSize=256m -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.endorsed.dirs=/users/demo/tomcat6_hqweb/endorsed -classpath /users/demo/tomcat6_hqweb/bin/bootstrap.jar -Dcatalina.base=/users/demo/tomcat6_hqweb -Dcatalina.home=/users/demo/tomcat6_hqweb -Djava.io.tmpdir=/users/demo/tomcat6_hqweb/temp org.apache.catalina.startup.Bootstrap start
+
+demo      6799     1  0 Jul27 ?        01:30:07 /usr/java/jdk1.6.0_13/bin/java -Djava.util.logging.config.file=/users/demo/proc_tc_moni/conf/logging.properties -server -Xmx128m -XX:PermSize=64m -XX:MaxNewSize=32m -XX:MaxPermSize=256m -Djava.awt.headless=true -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.endorsed.dirs=/users/demo/proc_tc_moni/endorsed -classpath /users/demo/proc_tc_moni/bin/bootstrap.jar -Dcatalina.base=/users/demo/proc_tc_moni -Dcatalina.home=/users/demo/proc_tc_moni -Djava.io.tmpdir=/users/demo/proc_tc_moni/temp org.apache.catalina.startup.Bootstrap start
+
+demo     48039     1  0 Jul05 ?        01:13:20 java -jar ./DemoBank.jar Adapter_Demo

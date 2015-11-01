@@ -1,0 +1,7 @@
+create sequence SEQ_V_COMMEXT
+minvalue 1
+maxvalue 9999999999999999999999999999
+start with 121
+increment by 1
+cache 20;
+

@@ -1,0 +1,19 @@
+create table V_FLOWCONTROL
+(
+  tradepartition NUMBER(3) default 1 not null,
+  unittype       NUMBER(2) not null,
+  unitid         NUMBER(5) not null,
+  breedid        NUMBER(10) not null,
+  startmode      NUMBER(2) not null,
+  starttime      VARCHAR2(32),
+  durativetime   NUMBER(8) not null,
+  countdownstart VARCHAR2(128),
+  countdowntime  VARCHAR2(128),
+  quartertime    NUMBER(8) default 0 not null,
+  forcedendtime  VARCHAR2(32),
+  ismargincount  NUMBER(2) default 0 not null
+)
+;
+alter table V_FLOWCONTROL
+  add constraint PK_V_FLOWCONTROL primary key (TRADEPARTITION, UNITTYPE, UNITID);
+

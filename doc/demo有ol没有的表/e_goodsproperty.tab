@@ -1,0 +1,14 @@
+create table E_GOODSPROPERTY
+(
+  orderid        NUMBER(15) not null,
+  propertyname   VARCHAR2(64) not null,
+  propertyvalue  VARCHAR2(64),
+  propertytypeid NUMBER(15) not null
+)
+;
+alter table E_GOODSPROPERTY
+  add constraint PK_E_GOODSPROPERTY primary key (ORDERID, PROPERTYNAME);
+alter table E_GOODSPROPERTY
+  add constraint REFE_ORDER8 foreign key (ORDERID)
+  references E_ORDER (ORDERID);
+

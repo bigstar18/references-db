@@ -1,0 +1,11 @@
+create table V_COMMODITYSELF
+(
+  partitionid NUMBER(3) not null,
+  usercode    VARCHAR2(32) not null,
+  code        VARCHAR2(64) not null,
+  time        DATE not null
+)
+;
+alter table V_COMMODITYSELF
+  add constraint PK_V_COMMODITYSELF primary key (PARTITIONID, USERCODE, CODE);
+

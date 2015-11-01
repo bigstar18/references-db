@@ -1,0 +1,15 @@
+create table E_SHOP
+(
+  firmid      VARCHAR2(32) not null,
+  shopname    VARCHAR2(64) not null,
+  shoplevel   NUMBER(3) not null,
+  description VARCHAR2(1000),
+  headimage   BLOB
+)
+;
+alter table E_SHOP
+  add constraint PK_E_SHOP primary key (FIRMID);
+alter table E_SHOP
+  add constraint REFE_FIRM86 foreign key (FIRMID)
+  references E_FIRM (FIRMID);
+

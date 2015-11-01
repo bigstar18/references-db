@@ -1,0 +1,30 @@
+create table E_HOLDING_H
+(
+  holdingid     NUMBER(15) not null,
+  tradeno       NUMBER(15) not null,
+  firmid        VARCHAR2(32) not null,
+  bsflag        CHAR(1) not null,
+  realmoney     NUMBER(15,2),
+  paymargin     NUMBER(15,2),
+  paygoodsmoney NUMBER(15,2),
+  payoff        NUMBER(15,2),
+  receive       NUMBER(15,2),
+  transfermoney NUMBER(15,2),
+  status        NUMBER(1),
+  breachapplyid NUMBER(10) not null,
+  offsetid      NUMBER(10) not null
+)
+;
+comment on column E_HOLDING_H.bsflag
+  is '''B'' 买 ''S'' 卖';
+comment on column E_HOLDING_H.paygoodsmoney
+  is '如果是买方则为转入货款/如果是卖方则为转入货物数量';
+comment on column E_HOLDING_H.payoff
+  is '如果是买方则为已支付货款/如果是卖方则为已支付货物数量';
+comment on column E_HOLDING_H.status
+  is ' 1:等待支付货款/仓单 2：已支付货款/仓单3：交易完成   4:自己违约 5 对方违约';
+comment on column E_HOLDING_H.offsetid
+  is '-1 尚未处理 0 无损益 其它为损益代码';
+alter table E_HOLDING_H
+  add constraint PK_E_HOLDING_H primary key (HOLDINGID);
+

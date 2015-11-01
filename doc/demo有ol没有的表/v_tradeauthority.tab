@@ -1,0 +1,10 @@
+create table V_TRADEAUTHORITY
+(
+  code      VARCHAR2(64) not null,
+  usercode  VARCHAR2(32) not null,
+  modiftime DATE not null
+)
+;
+alter table V_TRADEAUTHORITY
+  add constraint PK_V_TRADEAUTHORITY primary key (CODE, USERCODE);
+

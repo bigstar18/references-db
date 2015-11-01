@@ -1,0 +1,13 @@
+create table E_TRADEPROCESSLOG_H
+(
+  logid       NUMBER(12) not null,
+  tradeno     NUMBER(15) not null,
+  firmid      VARCHAR2(32) not null,
+  operator    VARCHAR2(32),
+  processinfo VARCHAR2(1024),
+  processtime DATE
+)
+;
+alter table E_TRADEPROCESSLOG_H
+  add constraint PK_E_TRADEPROCESSLOG_H primary key (LOGID);
+

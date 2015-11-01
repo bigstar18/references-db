@@ -1,0 +1,13 @@
+create table V_FUNDFROZEN
+(
+  id           NUMBER(10) not null,
+  userid       VARCHAR2(32) not null,
+  code         VARCHAR2(64) not null,
+  frozenmargin NUMBER(15,2) default 0 not null,
+  frozenfee    NUMBER(15,2) default 0 not null,
+  frozentime   TIMESTAMP(6) not null
+)
+;
+alter table V_FUNDFROZEN
+  add constraint PK_V_FUNDFROZEN primary key (ID);
+

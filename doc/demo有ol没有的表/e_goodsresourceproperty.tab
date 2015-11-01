@@ -1,0 +1,14 @@
+create table E_GOODSRESOURCEPROPERTY
+(
+  resourceid     NUMBER(15) not null,
+  propertyname   VARCHAR2(64) not null,
+  propertyvalue  VARCHAR2(64),
+  propertytypeid NUMBER(15) not null
+)
+;
+alter table E_GOODSRESOURCEPROPERTY
+  add constraint PK_E_GOODSRESOURCEPROPERTY primary key (RESOURCEID, PROPERTYNAME);
+alter table E_GOODSRESOURCEPROPERTY
+  add constraint REFE_GOODSRESOURCE137 foreign key (RESOURCEID)
+  references E_GOODSRESOURCE (RESOURCEID);
+

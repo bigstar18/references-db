@@ -1,0 +1,62 @@
+create table E_GOODSTEMPLATE
+(
+  templateid       NUMBER(15) not null,
+  ordertitle       VARCHAR2(128),
+  breedid          NUMBER(10) not null,
+  categoryid       NUMBER(10) not null,
+  bsflag           CHAR(1) not null,
+  price            NUMBER(15,2),
+  quantity         NUMBER(15,2),
+  unit             VARCHAR2(16) not null,
+  tradepretime     NUMBER(10),
+  trademargin_b    NUMBER(15,2),
+  trademargin_s    NUMBER(15,2),
+  deliverydaytype  NUMBER(1),
+  deliverypretime  NUMBER(10),
+  deliveryday      DATE,
+  deliverymargin_b NUMBER(15,2),
+  deliverymargin_s NUMBER(15,2),
+  deliverytype     NUMBER(1),
+  warehouseid      VARCHAR2(30) default 0,
+  deliveryaddress  VARCHAR2(64),
+  remark           VARCHAR2(1000),
+  validtime        NUMBER(10) default -1,
+  mintradeqty      NUMBER(15,2),
+  tradeunit        NUMBER(10,2),
+  ispickoff        VARCHAR2(1),
+  issuborder       VARCHAR2(1),
+  tradetype        NUMBER(1) default 0 not null,
+  paytype          NUMBER(1),
+  belongtouser     VARCHAR2(32) not null,
+  templatetype     NUMBER(2)
+)
+;
+comment on column E_GOODSTEMPLATE.ordertitle
+  is '委托时的标题，默认为商品分类名+品名。';
+comment on column E_GOODSTEMPLATE.bsflag
+  is '''B'' 买 ''S'' 卖';
+comment on column E_GOODSTEMPLATE.tradepretime
+  is '以秒为单位';
+comment on column E_GOODSTEMPLATE.deliverydaytype
+  is '0：指定准备天数 1：指定最后交割日';
+comment on column E_GOODSTEMPLATE.deliverypretime
+  is '一秒为单位';
+comment on column E_GOODSTEMPLATE.deliverytype
+  is '1：指定仓库交收 2：指定交收地交收';
+comment on column E_GOODSTEMPLATE.validtime
+  is '委托有效期：-1 不限制 以秒为单位';
+comment on column E_GOODSTEMPLATE.ispickoff
+  is 'Y 允许 N不允许';
+comment on column E_GOODSTEMPLATE.issuborder
+  is 'Y 允许 N不允许';
+comment on column E_GOODSTEMPLATE.tradetype
+  is '0： 协议交收 1：自主交收 ';
+comment on column E_GOODSTEMPLATE.paytype
+  is '0： 先款后货 1： 先货后款 2：不限制';
+comment on column E_GOODSTEMPLATE.belongtouser
+  is '系统模板 system 其它为交易商代码';
+comment on column E_GOODSTEMPLATE.templatetype
+  is '0： 系统模版 1：用户模版';
+alter table E_GOODSTEMPLATE
+  add constraint PK_E_GOODSTEMPLATE primary key (TEMPLATEID);
+

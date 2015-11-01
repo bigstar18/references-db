@@ -1,0 +1,15 @@
+create table T_BROADCAST
+(
+  id         NUMBER(15) not null,
+  title      VARCHAR2(64) not null,
+  content    VARCHAR2(512) not null,
+  status     NUMBER(1) default 0 not null,
+  firmid     VARCHAR2(10),
+  createtime DATE not null,
+  author     VARCHAR2(20) not null,
+  sendtime   DATE not null
+)
+;
+alter table T_BROADCAST
+  add constraint PK_T_BROADCAST primary key (ID);
+

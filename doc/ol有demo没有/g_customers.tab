@@ -1,0 +1,14 @@
+create table G_CUSTOMERS
+(
+  customer_id  INTEGER not null,
+  firstname    VARCHAR2(60) not null,
+  surname      VARCHAR2(60) not null,
+  dob          DATE not null,
+  gender       VARCHAR2(1) not null,
+  emailaddress VARCHAR2(400) not null,
+  password     VARCHAR2(400) not null
+)
+;
+alter table G_CUSTOMERS
+  add constraint G_CUSTOMERS_PK primary key (CUSTOMER_ID);
+

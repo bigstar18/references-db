@@ -1,0 +1,36 @@
+create table E_SUBORDER
+(
+  suborderid       NUMBER(15) not null,
+  orderid          NUMBER(15),
+  subfirmid        VARCHAR2(32) not null,
+  quantity         NUMBER(15,2) default 0 not null,
+  price            NUMBER(15,2),
+  warehouseid      VARCHAR2(30) default 0,
+  tradepretime     NUMBER(10),
+  deliverydaytype  NUMBER(1),
+  deliveryday      DATE,
+  deliverypretime  NUMBER(10),
+  deliverymargin_b NUMBER(15,2),
+  deliverymargin_s NUMBER(15,2),
+  frozenmargin     NUMBER(15,2),
+  remark           VARCHAR2(256),
+  status           NUMBER(1) not null,
+  withdrawer       VARCHAR2(16),
+  withdrawtime     DATE,
+  createtime       DATE,
+  reply            VARCHAR2(256),
+  replytime        DATE
+)
+;
+comment on column E_SUBORDER.tradepretime
+  is '以秒为单位';
+comment on column E_SUBORDER.deliverydaytype
+  is '0：指定准备天数 1：指定最后交割日';
+comment on column E_SUBORDER.status
+  is '0：等待挂牌方答复 1：挂牌方接受 2：挂牌方拒绝 3：摘牌方撤单 4：系统自动撤单 5管理员撤单';
+alter table E_SUBORDER
+  add constraint PK_E_SUBORDER primary key (SUBORDERID);
+alter table E_SUBORDER
+  add constraint REFE_ORDER42 foreign key (ORDERID)
+  references E_ORDER (ORDERID);
+

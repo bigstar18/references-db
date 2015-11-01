@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.yrdce</groupId>
+	<artifactId>references-db</artifactId>
+	<version>1.0.0</version>
+
+	<packaging>pom</packaging>
+	<name>${project.artifactId}</name>
+	
+	<prerequisites>
+		<maven>3.0.0</maven>
+	</prerequisites>
+
+	<!-- 设定除中央仓库 (repo1.maven.org/maven2/)外的其他仓库,按设定顺序进行查询，如有Nexus私服, 取消注释并指向正确的服务器地址 -->
+	<repositories>
+		<repository>
+			<id>public</id>
+			<name>local</name>
+			<url>http://10.0.100.180:8081/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
+	<!-- 如有Nexus私服, 取消注释并指向正确的服务器地址 -->
+	<pluginRepositories>
+		<pluginRepository>
+			<id>public</id>
+			<name>local</name>
+			<url>http://10.0.100.180:8081/nexus/content/groups/public/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+
+		<pluginRepository>
+			<id>oschina-repos</id>
+			<name>Oschina Releases</name>
+			<url>http://maven.oschina.net/content/groups/public</url>
+		</pluginRepository>
+	</pluginRepositories>
+	<!-- 自动打包 -->
+	<distributionManagement>
+		<repository>
+			<id>releases</id><!--这个ID需要与你的release仓库的Repository ID一致 -->
+			<url>http://10.0.100.180:8081/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id><!--这个ID需要与你的snapshots仓库的Repository ID一致 -->
+			<url>http://10.0.100.180:8081/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+	
+</project>

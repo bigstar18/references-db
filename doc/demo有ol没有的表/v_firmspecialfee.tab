@@ -1,0 +1,13 @@
+create table V_FIRMSPECIALFEE
+(
+  usercode   VARCHAR2(32) not null,
+  breedid    NUMBER(10) not null,
+  bs_flag    NUMBER(2) not null,
+  feealgr    NUMBER(2) not null,
+  fee        NUMBER(15,5) default 0 not null,
+  updatetime TIMESTAMP(6)
+)
+;
+alter table V_FIRMSPECIALFEE
+  add constraint PK_V_FIRMSPECIALFEE primary key (USERCODE, BREEDID, BS_FLAG);
+

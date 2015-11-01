@@ -1,0 +1,14 @@
+create table V_TRADEUSER
+(
+  usercode        VARCHAR2(32) not null,
+  overdraft       NUMBER(10,2) default 0 not null,
+  isentry         NUMBER(2) default 0 not null,
+  tradecount      NUMBER(8) default 0 not null,
+  limits          NUMBER(2) default 3 not null,
+  iscontinueorder NUMBER(2) default 0 not null,
+  modifytime      DATE default sysdate
+)
+;
+alter table V_TRADEUSER
+  add constraint PK_V_TRADEUSER primary key (USERCODE);
+

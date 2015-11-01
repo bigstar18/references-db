@@ -1,0 +1,15 @@
+create table G_BOOK_AUTHORS
+(
+  book_id   INTEGER not null,
+  author_id INTEGER not null
+)
+;
+alter table G_BOOK_AUTHORS
+  add constraint G_BOOK_AUTHORS_PK primary key (BOOK_ID, AUTHOR_ID);
+alter table G_BOOK_AUTHORS
+  add foreign key (BOOK_ID)
+  references G_BOOKS (BOOK_ID);
+alter table G_BOOK_AUTHORS
+  add foreign key (AUTHOR_ID)
+  references G_AUTHORS (AUTHOR_ID);
+

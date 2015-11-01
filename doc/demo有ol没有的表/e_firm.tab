@@ -1,0 +1,10 @@
+create table E_FIRM
+(
+  firmid     VARCHAR2(32) not null,
+  firmlevel  NUMBER(2) not null,
+  createtime DATE
+)
+;
+alter table E_FIRM
+  add constraint PK_E_FIRM primary key (FIRMID);
+

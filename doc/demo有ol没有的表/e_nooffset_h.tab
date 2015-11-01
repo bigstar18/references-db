@@ -1,0 +1,10 @@
+create table E_NOOFFSET_H
+(
+  id         NUMBER(10) not null,
+  tradeno    NUMBER(15) not null,
+  createtime DATE not null
+)
+;
+alter table E_NOOFFSET_H
+  add constraint PK_E_NOOFFSET_H primary key (ID);
+

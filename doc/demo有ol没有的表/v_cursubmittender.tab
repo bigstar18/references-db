@@ -1,0 +1,23 @@
+create table V_CURSUBMITTENDER
+(
+  id             NUMBER(12) not null,
+  tradepartition NUMBER(3) default 1 not null,
+  code           VARCHAR2(64) not null,
+  price          NUMBER(12,2) default 0 not null,
+  amount         NUMBER(16,6) default 0 not null,
+  traderid       VARCHAR2(40) not null,
+  userid         VARCHAR2(32) not null,
+  submittime     DATE not null,
+  ordertype      NUMBER(3) not null,
+  validamount    NUMBER(16,6) default 0 not null,
+  modifytime     TIMESTAMP(6) default systimestamp(6),
+  frozenmargin   NUMBER(15,2) default 0 not null,
+  frozenfee      NUMBER(15,2) default 0 not null,
+  unfrozenmargin NUMBER(15,2) default 0 not null,
+  unfrozenfee    NUMBER(15,2) default 0 not null,
+  withdrawtype   NUMBER(2)
+)
+;
+alter table V_CURSUBMITTENDER
+  add constraint PK_V_CURSUBMITTENDER primary key (ID);
+

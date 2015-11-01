@@ -1,0 +1,14 @@
+create table V_SYSCURSTATUS
+(
+  tradepartition NUMBER(3) default 1 not null,
+  status         NUMBER(3) not null,
+  section        NUMBER(8) not null,
+  modifytime     DATE not null,
+  starttime      DATE,
+  endtime        DATE,
+  isclose        NUMBER(2) default 0 not null
+)
+;
+alter table V_SYSCURSTATUS
+  add constraint PK_V_SYSCURSTATUS primary key (TRADEPARTITION);
+

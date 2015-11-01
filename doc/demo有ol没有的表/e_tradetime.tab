@@ -1,0 +1,24 @@
+create table E_TRADETIME
+(
+  id             NUMBER(10) default 1 not null,
+  restweekday    VARCHAR2(32),
+  holiday        VARCHAR2(1024),
+  tradestarttime VARCHAR2(16) not null,
+  tradeendtime   VARCHAR2(16) not null
+)
+;
+comment on table E_TRADETIME
+  is '运行时交易时间参数';
+comment on column E_TRADETIME.id
+  is 'ID';
+comment on column E_TRADETIME.restweekday
+  is '逗号分隔的星期几，星期日：1，星期一：2，星期二：3，星期三：4，星期四：5，星期五：6，星期六：7';
+comment on column E_TRADETIME.holiday
+  is '按逗号分隔，格式yyyy-MM-dd，指定非交易日。';
+comment on column E_TRADETIME.tradestarttime
+  is 'hh24:mi:ss';
+comment on column E_TRADETIME.tradeendtime
+  is 'hh24:mi:ss';
+alter table E_TRADETIME
+  add constraint PK_E_TRADETIME primary key (ID);
+

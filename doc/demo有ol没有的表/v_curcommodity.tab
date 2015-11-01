@@ -1,0 +1,13 @@
+create table V_CURCOMMODITY
+(
+  code           VARCHAR2(64) not null,
+  tradepartition NUMBER(3) default 1 not null,
+  commodityid    VARCHAR2(128) not null,
+  section        NUMBER(3),
+  bargaintype    NUMBER(2) default 0 not null,
+  modifytime     DATE not null
+)
+;
+alter table V_CURCOMMODITY
+  add constraint PK_V_CURCOMMODITY primary key (CODE);
+
